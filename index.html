@@ -1,0 +1,98 @@
+<!-- Este é o Gerador de vCard do TPC Advogados
+    
+    A página é totalmente responsiva e contém uma barra lateral fixa com os inputs para preenchimento dos dados do vCard e uma área de visualização do vCard.
+
+    Este projeto utiliza bootstrap para estilizar os elementos.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css" class="css">
+    <link rel="stylesheet" href="stylescrollbar.css">
+    <title>Gerador de vCards - TPC Advogados</title>
+</head>
+<body>
+    <!-- Barra lateral de inputs -->
+    <div id="inputs-bar">
+        <h3>Gerador de vCards</h3>
+        <h5>Dados do profissional</h5>
+        <span class="instructions">
+            Insira abaixo os dados do profissional para geração do cartão.
+        </span>
+        <div class="inputs">
+            <span id="label-nome" class="label">
+                Nome
+            </span>
+            <input type="text" id="nome" placeholder="Nome Completo" maxlength="40">
+            <div id="single_div">
+                <input type="checkbox" id="single-qr"></input>
+                <label for="single-qr">Profissional possui página no site?</label>
+            </div>
+            <span class="instructions">Marque esta opção caso o profissional possua página indivudal no site.</span>
+            <span id="label-site" class="label, hidden">
+                Link da página:
+            </span>
+            <input type="text" id="site" class="hidden" placeholder="Ex: tpcadvogados.com.br/setor/profissional/"  >
+            
+            <span class="label">
+                Telefone
+            </span>
+            <input type="tel" id="telefone" placeholder="32 4002 8922"   maxlength="14">
+            <span class="label">
+                Whatsapp
+            </span>
+            <input type="tel" id="whatsapp" placeholder="11 92222 2222"   maxlength="15">
+            <span class="label">
+                E-mail
+            </span>
+            <input type="email" id="email" placeholder="exemplo@tpcadvogados.com.br"  >
+            <span class="label">
+                Linkedin
+            </span>
+            <!--travar endereço @tpcadvogados.com.br-->
+            <input type="url" id="linkedin" placeholder="linkedin.com/in/usuario/"  >
+            <span class="label">
+                Qual endereço deve constar no cartão?
+            </span>
+            <select id="endereco" o>
+                <option value="bh">Belo Horizonte</option>
+                <option value="sp">São Paulo</option>
+                <option value="jm">João Monlevade</option>
+            </select>
+            <button id="gerar">Gerar vCard</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">Prévia do vCard</div>
+        <div id="preview">               
+            <div class="emmetPai">
+                <p class="preview-text" id="p-nome">RAFAEL GRASSI PINTO FERREIRA</p>
+    
+                <div id="qr-code-preview"></div>
+
+            </div>    
+            
+
+                <p class="preview-text" id="p-telefone">(32) 8409-4552</p>
+                <p class="preview-text" id="p-whatsapp">Contato via Whatsapp</p>
+                <p class="preview-text" id="p-email">contato@tpcadvogados.com.br</p>
+                <p class="preview-text" id="p-linkedin">Acessar Linkedin</p>
+                <p class="preview-text" id="p-site">tpcadvogados.com.br</p>
+                <p class="preview-text" id="p-endereco">Rua Eduardo Porto, 599 Cidade Jardim. Belo Horizonte MG. CEP 30380-060</p> 
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="html2canvas.min.js"></script>
+    <script type="text/javascript" src="jspdf.umd.js"></script>
+    <script src="script.js"></script>
+    <script src="displayPreview.js"></script>
+    <script src="qrCodeGenerator.js"></script>
+</body>
+</html>
