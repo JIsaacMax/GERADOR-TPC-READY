@@ -63,6 +63,14 @@ function linkedinFormat(){
   return (formattedNick? '@'+formattedNick : null);
 }
 
+function siteUrlFormat(){
+  let pureLink = siteInput.value.replace('https://','').split('/');
+  let formatLink = `${(pureLink[0].split("."))[0]}/${pureLink[pureLink.length-2]}`;
+  console.log(siteInput.value);
+  console.log(formatLink);
+  return formatLink;
+}
+
 // Função que atualiza os valores dos previews
 function updatePreview() {
   
@@ -92,7 +100,7 @@ function updatePreview() {
     // whatsappPreview.textContent = formatPhone(whatsappInput.value) || whatsappPreviewAnterior;
     emailPreview.textContent = String(emailInput.value).toLowerCase() || emailPreviewAnterior;
     linkedinPreview.textContent = linkedinPreviewAnterior //linkedinFormat() || linkedinPreviewAnterior;
-    sitePreview.textContent = siteInput.value || sitePreviewAnterior;
+    sitePreview.textContent = siteUrlFormat() || sitePreviewAnterior;
 
 
     // Atualiza o valor do endereço do preview de acordo com a opção selecionada no select

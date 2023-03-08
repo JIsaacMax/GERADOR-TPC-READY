@@ -151,7 +151,9 @@ function generatePDF() {
 
         // Adiciona a imagem capturada no PDF e salva o arquivo
         doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-        doc.save("preview.pdf");
+        
+        let archiveName = String(pNome.innerText).replaceAll(" ","-")
+        doc.save(`CARTÃO-VIRTUAL-${archiveName}.pdf`);
     });
 }
 
