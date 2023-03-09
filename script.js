@@ -36,6 +36,7 @@ var jsPDF = window.jspdf.jsPDF;
 
 function generatePDF() {
     preview.style.transform = `scale(1)`;
+    preview.style.boxShadow = ` 0px 0px 0px 0px rgba(0,0,0,0)`
     // Define a altura do PDF como a altura da janela do navegador
     const pdfHeight = preview.offsetHeight;
 
